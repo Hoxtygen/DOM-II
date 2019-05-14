@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v13/FwZY7-Qmy14u9lezJ-6H6Mw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Stylish';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Stylish Regular'), local('Stylish-Regular'), url(https://fonts.gstatic.com/s/stylish/v7/m8JSjfhPYriQkk7-TorzcA.ttf) format('truetype');
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
