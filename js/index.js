@@ -15,6 +15,7 @@
         //mouseover
         const nav = document.querySelector("nav");
         nav.addEventListener("mouseover", (e) => {
+            e.preventDefault();
             e.target.style.padding = "10px"
             e.target.style.backgroundColor = "black";
             e.target.style.color = "white";
@@ -41,15 +42,37 @@
             
         })
 
+        //resize
         window.addEventListener('resize', () => {
-            console.log("You resized the window")
-            document.body.clientWidth <= "500px" ? document.body.fontFamily = "Stylish" : document.body.fontFamily = ""
+            const footer = document.querySelector(".footer");
+        window.innerWidth <= 500 ? footer.style.backgroundColor = "orange" : footer.style.backgroundColor = ""
         })
 
         //drag
         const images = document.querySelectorAll("img");
         images.forEach(e => e.addEventListener("drag", () => {
             e.style.opacity = "0";
+            e.classList.add("transition")
         }))
+
+        //transition
+        images.forEach(e => {
+            e.classList.add("transition");
+            e.style.transitionProperty = "transform";
+            e.style.transitionDuration = "1s";
+            e.style.transitionDelay = "300ms"
+            e.addEventListener("mouseover", () => {
+                e.style.transform = "rotate(180deg)";
+            });
+            e.addEventListener("transitionstart", () => {
+                e.style.opacity = "0.5";
+            })
+            e.addEventListener("transitionend", ()=> {
+                e.style.transform = "rotate(360deg)";
+                e.style.opacity = "1";
+            })
+        });
+        //images.forEach(e => e.addEventListener("click", console.log("You clicked me")))
+        document.querySelector("img").addEventListener("click", () => console.log("clicked me"))
 
  // })
