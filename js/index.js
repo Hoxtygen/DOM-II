@@ -48,6 +48,13 @@
         window.innerWidth <= 500 ? footer.style.backgroundColor = "orange" : footer.style.backgroundColor = ""
         })
 
+        const footerParagraph = document.querySelector(".footer p");
+        console.log(footerParagraph)
+        footerParagraph.addEventListener("mouseover", (event) => {
+            event.stopPropagation()
+            footerParagraph.style.fontFamily = "Stylish";
+        })
+
         //drag
         const images = document.querySelectorAll("img");
         images.forEach(e => e.addEventListener("drag", () => {
